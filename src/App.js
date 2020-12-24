@@ -23,7 +23,7 @@ function App() {
       dispatch({
         type:"SET_TOKEN",
         token: _token,
-      })
+      });
       
 
       spotify.setAccessToken(_token);
@@ -53,13 +53,7 @@ function App() {
 
   return (
     <div className="App">
-     {
-       token ? (
-         <Player spotify={spotify}/>
-       ) : (
-         <Login />
-       )
-     }
+     {token ? <Player spotify={spotify} /> : <Login />}
     </div>
   );
 }
